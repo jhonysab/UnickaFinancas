@@ -1,6 +1,6 @@
 <div align="center">
 
-# 💰 Controle de Gastos — Finanças da Família
+# 💰 Unicka Finanças
 
 **App Android nativo para uma família organizar dinheiro junta, em tempo real.**
 
@@ -39,6 +39,22 @@ A ideia central é o **cofre compartilhado da família**: cada pessoa instala o 
 | 🎯 **Orçamento por categoria** | Define um limite mensal por categoria e acompanha o quanto já foi gasto. |
 | 📈 **Gráficos e resumos** | Visão do mês por categoria e forma de pagamento, com busca e filtros. |
 | 📤 **Exportação CSV** | Exporta os lançamentos para abrir em Excel / Google Sheets. |
+
+---
+
+## 📱 Telas
+
+<div align="center">
+
+| Resumo | Gráficos | Limites |
+|:---:|:---:|:---:|
+| <img src="docs/prints/1-resumo.png" width="240"> | <img src="docs/prints/2-graficos.png" width="240"> | <img src="docs/prints/3-limites.png" width="240"> |
+| **Contas** | **Novo lançamento** | **Cartões** |
+| <img src="docs/prints/4-contas.png" width="240"> | <img src="docs/prints/5-lancar.png" width="240"> | <img src="docs/prints/6-cartoes.png" width="240"> |
+
+<sub>Prints com dados de exemplo (família fictícia), gerados pelo teste <code>PrintsDivulgacaoTest</code>.</sub>
+
+</div>
 
 ---
 
@@ -83,6 +99,7 @@ A segurança dos dados é garantida pelas **regras do Firestore** (`firestore.ru
 
 - **Unitários (JVM):** lógica pura — por exemplo, o agrupamento dos lançamentos por dia.
 - **Instrumentados (Compose UI):** telas exercitadas com dados de mentira, sem precisar de login nem de internet — o agrupamento das contas, arquivar e restaurar limites, a trava que impede excluir uma categoria em uso e os nomes das abas com a fonte do sistema ampliada.
+- **Prints de divulgação:** `PrintsDivulgacaoTest` sobe o app de verdade com uma família fictícia, com o Firestore offline (nada chega na nuvem), e fotografa as telas.
 
 ```bash
 ./gradlew testDebugUnitTest          # unitários
